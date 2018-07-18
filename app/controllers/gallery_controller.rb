@@ -8,8 +8,8 @@ class GalleryController < ApplicationController
 		if gallery_params != ''
 
 			@gallery = Gallery.new(gallery_params)
-			@recipe.user_id = current_user.id
-			if @recipe.save
+			@gallery.custid = current_user.id
+			if @gallery.save
 				redirect_to '/mainpage'
 			else
 				redirect_to '/new'
@@ -23,7 +23,7 @@ class GalleryController < ApplicationController
 	private
 
 		def gallery_params
-			params.require(:recipe).permit(:name , :ingredient , :step ,:description ,:category)
+			params.permit(:title , :description ,:image_link)
 		end
 
 end

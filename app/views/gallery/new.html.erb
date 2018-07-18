@@ -1,24 +1,25 @@
 <div style="width:800px;">
-  <form runat="server" action="/create" method="POST">
+  <form  accept-charset="UTF-8" action ="/new" method="POST">
     <div class="form-group">
       <label for="exampleInputEmail1">Title</label>
-      <input type="title" class="form-control" id="title" placeholder="Enter Title" style="width:200px;">
+      <input type="text" name="title" class="form-control" id="title" placeholder="Enter Title" style="width:200px;">
     </div>
 
 
           <img id="blah" src="#" alt="your image" /></br>
-          <input type='file' id="imgInp" />
+          <input name="image_link" type='file' id="imgInp" />
 
 
 
     <div class="form-group">
       <label for="exampleInputPassword1">Description</label>
-      <textarea class="form-control rounded-0" id="exampleFormControlTextarea1" rows="10"></textarea>
+      <textarea name="description" class="form-control rounded-0" id="exampleFormControlTextarea1" rows="10"></textarea>
     </div>
 
     <button type="submit" class="btn btn-primary">Submit</button>
   </form>
 </div>
+
 
 
 

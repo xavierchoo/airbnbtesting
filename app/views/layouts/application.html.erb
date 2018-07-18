@@ -17,11 +17,55 @@
   </head>
 
   <body>
-  <% if current_user %>
+<!--   <% if current_user %>
     Signed in as <%= current_user.name %> | <%= link_to "Logout", '/logout' %>
   <% else %>
     <%= link_to 'Login', '/login' %> | <%= link_to 'Signup', '/signup' %>
-  <% end %>
+  <% end %> -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">Dental CLinic</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    &nbsp;
+    &nbsp;
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="/mainpage">Home <span class="sr-only">(current)</span></a>
+      </li>
+        <% if current_user %>
+          <li class="nav-item active">
+            <a class="nav-link" href="/product">Product List</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="/appointment">Appointments</a>
+          </li>
+        <% else %>
+        <% end %> 
+        <li class="nav-item active">
+          <a class="nav-link" href="/aboutus">About Us </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#"> 
+           <% if current_user %>
+             Signed in as <%= current_user.name %>
+           <% else %>
+           <% end %> 
+        </a>
+        </li>
+
+      </ul>
+      <div style="float:right;">
+      <button class="btn btn-primary">Give Us A Like</button><print>&nbsp;Likes: 0 |</print>
+      <% if current_user %>
+       <%= link_to "Logout", '/logout' %>
+      <% else %>
+        <%= link_to 'Staff Login', '/login' %>
+      <% end %> 
+      </div>
+    </div>
+  </nav>
     <%= yield %>
   </body>
 
