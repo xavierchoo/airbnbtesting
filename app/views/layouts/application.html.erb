@@ -44,7 +44,10 @@
         <% else %>
         <% end %> 
         <li class="nav-item active">
-          <a class="nav-link" href="/aboutus">About Us </a>
+          <% if current_user %>
+          <%= link_to 'Create another admin account', '/signup' %>
+           <% else %>
+           <% end %> 
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#"> 

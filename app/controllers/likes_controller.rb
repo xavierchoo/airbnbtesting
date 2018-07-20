@@ -7,7 +7,7 @@ class LikesController < ApplicationController
 
 	def update
 		
-		@like = Like.find(2)
+		@like = Like.find(1)
 		@current_likes = @like.likes
 		@future_likes = @current_likes+= 1;
 		@like.likes = @future_likes
@@ -15,9 +15,12 @@ class LikesController < ApplicationController
 	end
 
 	def get
-		@like = Like.find(2)
-		@current_likes = @like.likes
-		render :json => @current_likes.to_json
+		# @like = Like.find(1)
+		# @current_likes = @like.likes
+		# render :json => @current_likes.to_json
+		like = Like.new
+		like.likes=1;
+		like.save
 	end
 
 
