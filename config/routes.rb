@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   # get 'greetings/hello'
   # get 'greetings/test'
 
-  get '/mainpage' => 'mainpage#index', as:'home'
+  get '/' => 'mainpage#index', as:'home'
 
   # get '/new' => 'gallery#new' , as:'new'
   # post '/new' => 'gallery#create' , as:'create'
