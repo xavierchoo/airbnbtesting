@@ -19,6 +19,7 @@
 	        </tr>
 	    </thead>
 	    <tbody>
+	    <% if @products != '' %>
 	        <% @products.each do |p| %>
 	        <tr>
 	           <td><%= p.title %></td>
@@ -29,6 +30,7 @@
 	           <td><%= p.created_at %></td>
 	        </tr>
 	        <% end %>
+	     <% end %>
 	    </tbody>
 	</table> 
 </div>
