@@ -1,37 +1,12 @@
-
+<% @products.each do |p| %>
 <div class="page">
   <div class="card" style="width: 18rem;margin-top: 20px;">
     <img class="card-img-top" src="http://www.martikfamilydental.com/thedentalsitecontent/100043/Image/shutterstock_151234022_conflict-20140520-150257.jpg" alt="Teeth Whitening">
     <div class="card-body">
-      <h5 class="card-title">Teeth Whitening</h5>
-      <p class="card-text">Make your teeth healthier and shinier than ever in 1 day!</p>
-      <p class="card-text">Price: <span style="color:red">50 USD</span></p>
-      <a href="/new" class="btn btn-primary">More Details</a>
-
+      <h5 class="card-title"><%= p.title %></h5>
+      <p class="card-text"><%= p.description %></p>
+      <p class="card-text">Price: <span style="color:red"><%= p.price %></span></p>
     </div>
   </div>
 </div>
-
-<div class="page">
-  <div class="card" style="width: 18rem;margin-top: 20px;">
-    <img class="card-img-top" src="http://www.martikfamilydental.com/thedentalsitecontent/100043/Image/shutterstock_151234022_conflict-20140520-150257.jpg" alt="Teeth Whitening">
-    <div class="card-body">
-      <h5 class="card-title">Teeth Whitening</h5>
-      <p class="card-text">Make your teeth healthier and shinier than ever in 1 day!</p>
-      <p class="card-text">Price: <span style="color:red">50 USD</span></p>
-      <a href="/new" class="btn btn-primary">More Details</a>
-    </div>
-  </div>
-</div>
-
-<div class="page">
-  <div class="card" style="width: 18rem;margin-top: 20px;">
-    <img class="card-img-top" src="http://www.martikfamilydental.com/thedentalsitecontent/100043/Image/shutterstock_151234022_conflict-20140520-150257.jpg" alt="Teeth Whitening">
-    <div class="card-body">
-      <h5 class="card-title">Teeth Whitening</h5>
-      <p class="card-text">Make your teeth healthier and shinier than ever in 1 day!</p>
-      <p class="card-text">Price: <span style="color:red">50 USD</span></p>
-      <a href="/new" class="btn btn-primary">More Details</a>
-    </div>
-  </div>
-</div>
+<% end %>

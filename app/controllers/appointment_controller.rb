@@ -1,5 +1,11 @@
 class AppointmentController < ApplicationController
 	skip_before_action :verify_authenticity_token
+	before_action :authorize
+	def index
+		@appointments = Appointment.all
+
+	end
+
 	def new
 		@appointment = Appointment.new
 	end
@@ -12,18 +18,18 @@ class AppointmentController < ApplicationController
 			if @appointment.save
 				redirect_to '/appointment'
 			else
-				redirect_to '/new'
+				redirect_to '/appointment_new'
 			end
 
 		else
-			render 'new'
+			render '/appointment_new'
 		end
 	end
 
 	private
 
 		def appointment_params
-			# params.permit(:title , :description ,:image_link)
+		  params.permit(:name ,:email,:phone, :product_id )
 		end
 
 end

@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   # get 'greetings/hello'
   # get 'greetings/test'
 
-  get '/mainpage' => 'mainpage#index'
+  get '/mainpage' => 'mainpage#index', as:'home'
 
   # get '/new' => 'gallery#new' , as:'new'
   # post '/new' => 'gallery#create' , as:'create'
@@ -14,9 +14,17 @@ Rails.application.routes.draw do
   get '/product_new' => 'product#new' , as:'product_new'
   post '/product_new' => 'product#create' , as:'product_create'
 
-  get '/signup' => 'users#new'
+  get '/appointment' => 'appointment#index' 
+  get '/appointment_new' => 'appointment#new' , as:'appointment_new'
+  post '/appointment_new' => 'appointment#create' , as:'appointment_create'
+
+  post '/like' => 'likes#update'
+  get '/get_like' => 'likes#get'
+
+  get '/signup' => 'users#new', as: 'sign_up'
   post '/users' => 'users#create'
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
   get '/logout' => 'sessions#destroy'
+  get '/weather' => 'weather#new'
 end

@@ -27,6 +27,11 @@ gem "figaro"
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
+gem "rspec"
+gem 'capybara', '>= 2.15', '< 4.0'
+gem 'guard-rspec'
+gem 'rspec-rails'
+gem 'rest-client'
 
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'

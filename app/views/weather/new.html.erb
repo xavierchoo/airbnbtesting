@@ -1,0 +1,8 @@
+<% @test_list.each do |item| %>
+<print>Weather:</print><p> <%= item['weather'][0]['description'] %></p>
+<print>Temperature(kelvin):</print><p> <%= item['main']["temp"] %></p>
+<print>Humidity(%):</print><p> <%= item['main']["humidity"] %></p>
+<print>Date:</print><p> <%= item['dt_txt'] %></p>
+<hr>
+<% end %>
+
