@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_07_20_143213) do
+ActiveRecord::Schema.define(version: 2018_07_20_154856) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,6 +23,16 @@ ActiveRecord::Schema.define(version: 2018_07_20_143213) do
     t.datetime "appointment"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "authentications", force: :cascade do |t|
+    t.string "uid"
+    t.string "token"
+    t.string "provider"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_authentications_on_user_id"
   end
 
   create_table "galleries", force: :cascade do |t|
@@ -61,4 +71,5 @@ ActiveRecord::Schema.define(version: 2018_07_20_143213) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "authentications", "users"
 end

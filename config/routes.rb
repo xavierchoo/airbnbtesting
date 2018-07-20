@@ -20,7 +20,7 @@ Rails.application.routes.draw do
 
   post '/like' => 'likes#update'
   get '/get_like' => 'likes#get'
-
+  get "/auth/:provider/callback" => "sessions#create_from_omniauth"
   get '/signup' => 'users#new', as: 'sign_up'
   post '/users' => 'users#create'
   get '/login' => 'sessions#new'

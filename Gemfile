@@ -32,6 +32,8 @@ gem 'capybara', '>= 2.15', '< 4.0'
 gem 'guard-rspec'
 gem 'rspec-rails'
 gem 'rest-client'
+gem 'omniauth'
+gem 'omniauth-google-oauth2'
 
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
